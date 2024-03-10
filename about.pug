@@ -1,0 +1,67 @@
+doctype html
+html
+  head
+    title About Us
+    
+    style.
+      body {
+        font-family: Arial,sans-serif;
+        color: white;
+        background-image: url("css/Paper.jpg");
+        background-size: cover;
+      }
+      h1 {
+        text-align: center;
+      }
+      .container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .team-member {
+        margin: 20px;
+        text-align: center;
+        max-width: 300px;
+        transition: transform 0.2s ease-in-out;
+      }
+      .team-member:hover {
+        transform: translateY(-10px);
+      }
+      .team-member img {
+        width: 100%;
+        height: auto;
+        border-radius: 50%;
+      }
+      .team-member h2 {
+        margin-top: 10px;
+        font-size: 24px;
+      }
+      .home-button {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: transparent;
+        border: none;
+        padding: 10px;
+        font-size: 20px;
+        color: white;
+        cursor: pointer;
+      }
+
+  body
+    button.home-button(onclick="location.href='/'") ⌂ Home
+    h1 About Us
+    div.container
+      div.team-member
+        img(src="images/img1.jpg", alt="Team Member 1")
+        h2 Hemanth Jasthi
+        p 2100030206
+      div.team-member
+        img(src="images/img2.jpg", alt="Team Member 2")
+        h2 Akshaya Vasu
+        p 2100030007
+      div.team-member
+        img(src="images/img3.jpg", alt="Team Member 3")
+        h2 Sumanth Mathireddy
+        p 2100040361

@@ -1,0 +1,69 @@
+include ./header
+
+html
+  head
+    style.
+      body {
+        background-color: #f2f9ff;
+      }
+  body
+    .App-body
+      .row
+      .container
+          if register
+            form.register(method='post' action='/register')
+              .form-group
+                p Fullname
+                input.form-control(type='text' name='fullname')
+              .form-group
+                p Email address
+                input.form-control(type='email' name='email')
+              .form-group
+                p Country/Address
+                input.form-control(type='text' name='address')
+              .form-group
+                p Phone number
+                input.form-control(type='text' name='phone')
+              .form-group
+                p Password
+                input.form-control(type='password' name='password')
+              .form-group
+                p Re-enter password
+                input.form-control(type='password' name='password2')
+              .form-group
+                input.btn.btn-primary.form-control(type='submit' value='Submit')
+              .form-group
+                a( href='/login' style='color: #3cacd7; cursor: pointer;') Login
+              .messages
+                if submitted
+                  if errors
+                    for error in errors
+                      p(style='padding: 5px 10px; color: red')= error
+                  else if success
+                    p(style='padding: 5px 10px; color: green')= success
+          else if login
+            form.login(method='post' action='/login')
+              h5(style='text-align: center; margin-top: 10px;') Login
+              .form-group
+                p Email address
+                input.form-control(type='email' name='email')
+              .form-group
+                p Password
+                input.form-control(type='password' name='password')
+              .form-group
+                input.btn.btn-primary.form-control(type='submit' value='Submit')
+              .form-group
+                a( href='/register' style='color: #3cacd7; cursor: pointer;') Register
+              .messages
+                if login_errors
+                  p(style='padding: 5px 10px; color: red')= login_errors          
+    nav.navbar.navbar-expand-md.bg-dark.navbar-dark.fixed-top
+        a.navbar-brand(href='/') Auction
+        button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarNav')
+            span.navbar-toggler-icon
+        #navbarNav.collapse.navbar-collapse
+            ul.navbar-nav.ml-auto
+                li.nav-item
+                    a.nav-link(href='/') Home
+                li.nav-item
+                    a.nav-link(href='/register') Register
